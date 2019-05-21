@@ -94,7 +94,54 @@ Runnable example : [Code Link](https://raw.githubusercontent.com/eacousineau/exe
 Refer [Tutorial](http://wiki.ros.org/smach/Tutorials/Calling%20Actions) and [Code](https://raw.githubusercontent.com/eacousineau/executive_smach_tutorials/hydro-devel/smach_tutorials/examples/actionlib2_test.py) .
 
 ## Viewing State Machines 
-Works using smach viewer. smach viewer is not available in ROS Kinetic. Refer [Tutorial](http://wiki.ros.org/smach/Tutorials/Smach%20Viewer) for reference. 
+
+Works using smach viewer. smach viewer is not available in ROS Kinetic. Refer [Tutorial](http://wiki.ros.org/smach/Tutorials/Smach%20Viewer) for reference. <br />
+TO use smach viewer in ROS Kinetic,follow this [link](https://l.facebook.com/l.php?u=https%3A%2F%2Fgist.github.com%2Fmatt3o%2F88bced95dba37a8932a51904d0734dff%3Ffbclid%3DIwAR1EU794o_uhSqR8glw7UJi0cs0iIhsU9Jxe3-Rikc40HpWiPV6wwdOyFoM&h=AT3p1E0Aw6XwTbE1SZY4xnMcNlAFLDm0KlcTlOj4XRSpndzHA9vwCBg_0bqy02ltC7uPUMyPOb79c6X4I2JOOtBE6fMmXLeT5uPocqnR8zj2uOzzWIOqPTlcu-Oe0Q) and also read below given instructions:
+
+
+Introduction
+------------
+
+[Rqt\_smach] [rqt] is a Qt based user interface for the robotics state machine  
+software [SMACH] [smach]. Rqt\_Smach displays the structure of the [SMACH] [smach]  
+state machine, the current state, and user data. In addition, it also  
+provides a few different graph display options, a tree view, and the  
+ability to set the initial state in a server.   
+
+  [rqt]: https://github.com/jbohren/executive_smach_visualization
+  [smach]:   http://wiki.ros.org/smach
+
+![alt text](rqt_smach_1.png)
+
+Running Rqt\_Smach
+------------------
+
+To run rqt\_smach, you must have [executive\_smach\_visulization] [1], [xdot] [2],  
+and [executive\_smach] [3] in your [catkin workspace] [4]. Then build those  
+packages using [catkin build] [5] or [catkin\_make] [6].  
+
+  [1]: https://github.com/jbohren/executive_smach_visualization
+  [2]: https://github.com/jbohren/xdot
+  [3]: https://github.com/jbohren/executive_smach
+  [4]: http://wiki.ros.org/catkin/Tutorials/create_a_workspace
+  [5]: http://catkin-tools.readthedocs.org/en/latest/verbs/catkin_build.html
+  [6]: http://wiki.ros.org/catkin/commands/catkin_make
+
+Once the packages are built, make sure you have a [roscore] [7] running,    
+source your environment, and then execute the following command:   
+
+    rosrun rqt_smach rqt_smach
+
+  [7]: http://wiki.ros.org/roscore
+
+The executive\_smach\_viewer package contains two slightly different  
+test servers you can use to see how rqt\_smach works. If you open and  
+**source two new terminals**, you can run the tests servers with these  
+commands:  
+
+    rosrun smach_viewer test/server.py  
+
+    rosrun smach_viewer test/server2.py  
 
 ## Concurrent State Machine
 An example of running two states in parallel.<br />
